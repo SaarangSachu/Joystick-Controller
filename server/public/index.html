@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PocketPad Controller</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#121212">
+    <!-- Nipple.js for Virtual Joysticks -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nipplejs/0.10.1/nipplejs.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+
+    <!-- Triggers / Bumpers -->
+    <div class="triggers-bar">
+        <div class="trigger-zones">
+            <div id="btn-l2" class="shoulder-btn">L2</div>
+            <div id="btn-l1" class="shoulder-btn">L1</div>
+        </div>
+        <button id="fullscreen-btn">⛶ Fullscreen</button>
+        <div class="trigger-zones">
+            <div id="btn-r1" class="shoulder-btn">R1</div>
+            <div id="btn-r2" class="shoulder-btn">R2</div>
+        </div>
+    </div>
+
+    <!-- Main Controller Face -->
+    <div id="controller-container">
+
+        <!-- LEFT SECTION: D-Pad & Left Stick -->
+        <div class="left-section">
+            <div class="dpad">
+                <div id="dpad-up" class="dpad-btn dpad-up">▲</div>
+                <div id="dpad-left" class="dpad-btn dpad-left">◀</div>
+                <div id="dpad-right" class="dpad-btn dpad-right">▶</div>
+                <div id="dpad-down" class="dpad-btn dpad-down">▼</div>
+            </div>
+
+            <div id="joystick-left" class="joystick-zone"></div>
+        </div>
+
+        <!-- CENTER SECTION: Start/Select/Guide -->
+        <div class="center-section">
+            <div class="center-row">
+                <button id="btn-select" class="center-btn">SELECT</button>
+                <button id="btn-start" class="center-btn">START</button>
+            </div>
+        </div>
+
+        <!-- RIGHT SECTION: ABXY & Right Stick -->
+        <div class="right-section">
+            <div class="abxy-cluster">
+                <button id="btn-y" class="action-btn btn-y">Y</button>
+                <button id="btn-x" class="action-btn btn-x">X</button>
+                <button id="btn-b" class="action-btn btn-b">B</button>
+                <button id="btn-a" class="action-btn btn-a">A</button>
+            </div>
+
+            <div id="joystick-right" class="joystick-zone"></div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
